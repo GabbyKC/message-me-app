@@ -5,4 +5,5 @@ App.chatroom = App.cable.subscriptions.create "ChatroomChannel",
   disconnected: ->
 # Called when the subscription has been terminated by the server
 
-  received: (data) -> alert data.foo
+  received: (data) ->
+    $('#message-container').append data.new_message
